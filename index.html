@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+/* Header */
+
+header {
+    background-color: #fff8ed;
+    border-radius: 18px;
+    margin: 10px;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo h1 {
+    color: #287a35;
+    font-size: 27px;
+}
+
+.partner h3 {
+    font-size: 16px;
+    color: #553d2c;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    min-width: 130px;
+    min-height: 40px;
+    padding: 10px 15px;
+    font-size: 15px;
+    background-color: #287a35;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#login-btn {
+    background-color: #fff8ed;
+    border: 2px solid #ff6247;
+    color: #8b4513;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* Main Banner */
+
+.main-banner {
+    margin: 15px;
+}
+
+.main-banner img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* Promotional Images */
+
+.text1 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    padding: 15px;
+}
+
+.text1 img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.text1 img:hover {
+    transform: scale(1.02);
+}
+
+/* Categories */
+
+.categories {
+    padding: 25px 20px;
+}
+
+.categories h2 {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.text2 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background-color: #f7faf5;
+    border: 1px solid #e9eee6;
+    padding: 12px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.category-card p {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* Offer Section */
+
+.offer {
+    margin: 25px 20px;
+    padding: 35px;
+    background-color: #edf7e8;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.offer-tag {
+    color: #287a35;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.offer h2 {
+    color: #234b2b;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.offer div > p:last-child {
+    color: #666666;
+    line-height: 1.6;
+}
+
+.offer a {
+    display: inline-block;
+    background-color: #287a35;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.offer a:hover {
+    background-color: #1c5d29;
+}
+
+/* Footer */
+
+footer {
+    background-color: #f7f8f4;
+    margin-top: 30px;
+    padding: 35px 25px 0;
+}
+
+.text3 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+    align-items: start;
+    padding-bottom: 35px;
+}
+
+.text3 h2 {
+    color: #222222;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.text3 a {
+    display: block;
+    color: #666666;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.text3 a:hover {
+    color: #287a35;
+}
+
+.footer-bottom {
+    border-top: 1px solid #dddddd;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.footer-bottom h2 {
+    color: #287a35;
+    margin-bottom: 10px;
+}
+
+.footer-bottom p {
+    color: #666666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Tablet Responsive */
+
+@media screen and (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .text2 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .text3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main-banner img {
+        height: 250px;
+    }
+}
+
+/* Mobile Responsive */
+
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 20px 12px;
+    }
+
+    .logo h1 {
+        font-size: 24px;
+    }
+
+    .partner h3 {
+        font-size: 14px;
+    }
+
+    .header-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    button {
+        min-width: 120px;
+    }
+
+    .main-banner {
+        margin: 10px;
+    }
+
+    .main-banner img {
+        height: 180px;
+    }
+
+    .text1 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .text1 img {
+        height: 180px;
+    }
+
+    .categories {
+        padding: 20px 12px;
+    }
+
+    .categories h2 {
+        font-size: 23px;
+    }
+
+    .text2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .category-card {
+        padding: 8px;
+    }
+
+    .category-card img {
+        height: 120px;
+    }
+
+    .category-card p {
+        font-size: 14px;
+    }
+
+    .offer {
+        margin: 15px 12px;
+        padding: 22px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .offer h2 {
+        font-size: 23px;
+    }
+
+    .text3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 15px;
+    }
+
+    .text3 h2 {
+        font-size: 16px;
+    }
+
+    .text3 a {
+        font-size: 13px;
+    }
+
+    footer {
+        padding: 25px 15px 0;
+    }
+}
+
+/* Very Small Screens */
+
+@media screen and (max-width: 350px) {
+    .header-buttons {
+        flex-direction: column;
+    }
+
+    .text2,
+    .text3 {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GREENMART | Fresh Grocery Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>🥑 GREENMART</h1>
+        </div>
+
+        <div class="partner">
+            <h3>GreenMart Corporate | Partner with Us</h3>
+        </div>
+
+        <div class="header-buttons">
+            <button id="login-btn">Get the App ➜</button>
+            <button class="cart-btn">🛒 Add to Cart</button>
+        </div>
+    </header>
+
+    <!-- Main Banner -->
+    <section class="main-banner">
+        <img
+            src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1800&q=80"
+            alt="Fresh fruits and vegetables"
+        >
+    </section>
+
+    <!-- Three Promotional Images -->
+    <section class="text1">
+
+        <img
+            src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=700&q=80"
+            alt="Fresh bananas"
+        >
+
+        <img
+            src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=80"
+            alt="Healthy vegetables"
+        >
+
+        <img
+            src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=700&q=80"
+            alt="Fresh fruits"
+        >
+
+    </section>
+
+    <!-- Shopping Categories -->
+    <section class="categories">
+
+        <h2>Shop by Category</h2>
+
+        <div class="text2">
+
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=350&q=80" alt="Food and groceries">
+                <p>Daily Essentials</p>
+            </div>
+
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=350&q=80" alt="Apples">
+                <p>Fresh Fruits</p>
+            </div>
+
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=350&q=80" alt="Vegetables">
+                <p>Vegetables</p>
+            </div>
+
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=350&q=80" alt="Milk">
+                <p>Dairy Products</p>
+            </div>
+
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484df?auto=format&fit=crop&w=350&q=80" alt="Bakery">
+                <p>Bakery</p>
+            </div>
+
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=350&q=80" alt="Healthy food">
+                <p>Healthy Food</p>
+            </div>
+
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=350&q=80" alt="Fresh salad">
+                <p>Organic Food</p>
+            </div>
+
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=350&q=80" alt="Fresh juice">
+                <p>Drinks & Juices</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Special Offer -->
+    <section class="offer">
+        <div>
+            <p class="offer-tag">FRESH DEALS FOR YOU</p>
+            <h2>Freshness Delivered to Your Door!</h2>
+            <p>Save more on your everyday grocery shopping.</p>
+        </div>
+
+        <a href="#footer">Explore More ➜</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+
+        <div class="text3">
+
+            <div>
+                <h2>Useful Links</h2>
+                <a href="#">About Us</a>
+                <a href="#">Blog</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">FAQs</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+            <div>
+                <h2>Partner With Us</h2>
+                <a href="#">Become a Partner</a>
+                <a href="#">Franchise</a>
+                <a href="#">Sell Products</a>
+                <a href="#">Warehouse</a>
+                <a href="#">Delivery Jobs</a>
+                <a href="#">Resources</a>
+            </div>
+
+            <div>
+                <h2>Our Services</h2>
+                <a href="#">Online Grocery</a>
+                <a href="#">Fresh Vegetables</a>
+                <a href="#">Fresh Fruits</a>
+                <a href="#">Daily Essentials</a>
+                <a href="#">Organic Products</a>
+                <a href="#">Home Delivery</a>
+            </div>
+
+            <div>
+                <h2>Categories</h2>
+                <a href="#">Fruits & Vegetables</a>
+                <a href="#">Dairy & Eggs</a>
+                <a href="#">Bakery & Biscuits</a>
+                <a href="#">Snacks & Namkeen</a>
+                <a href="#">Drinks & Juices</a>
+                <a href="#">Personal Care</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <h2>🥑 GREENMART</h2>
+            <p>Fresh choices. Healthy living.</p>
+            <p>©️ 2026 GreenMart. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
